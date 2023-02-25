@@ -7,7 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {# Affichage du titre de la page venant de la vue, suivi du nom du site #}
     <title>{% block title %}{% endblock %} - Le magasin EDEN</title>
-
+    {# Inclusion Font Awesome#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    {# Inclusion CSS Bootstrap#}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    {# Inclusion Styles CSS perso #}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {# Bloc pour ajouter des fichiers css additionnels #}
     {% block css %}{% endblock %}
 </head>
@@ -16,6 +21,8 @@
     {# Block pour afficher le contenu des pages#}
     {% block body %}{% endblock %}
 
+    {# inclusion JS Bootstrap #}
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     {# Block pour ajouter des fichiers JS additionnels #}
     {% block js %}{% endblock %}
 </body>
