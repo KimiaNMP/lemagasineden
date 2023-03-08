@@ -1,3 +1,5 @@
+{# la variable twig "route" contiendra le nom de la route actuelllement chargéé (pour le menu) #}
+{% set route = app.request.attributes.get('_route') %}
 <!Doctype html>
 <html lang="fr">
 <head>
@@ -18,8 +20,14 @@
 </head>
 <body>
 
+    {# Inclusion du menu principal du site #}
+    {% include "partials/_main_navbar.html.twig" %}
+
     {# Block pour afficher le contenu des pages#}
     {% block body %}{% endblock %}
+
+    {# inclusion du pied de page du site #}
+    {% include 'partials/_footer.html.twig' %}
 
     {# inclusion JS Bootstrap #}
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
